@@ -16,7 +16,7 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi
 `$HOME/.config/i3`  
 
 ## Thanks :)
-* ![aeghn/prettyi3](https://github.com/aeghn/prettyi3)
-* ![i3 wiki](https://wiki.archlinux.org/index.php/I3)
-* ![polybar wiki](https://github.com/polybar/polybar/wiki)
-* ![picom wiki](https://wiki.archlinux.org/index.php/Picom)
+* [aeghn/prettyi3](https://github.com/aeghn/prettyi3)
+* [i3 wiki](https://wiki.archlinux.org/index.php/I3)
+* [polybar wiki](https://github.com/polybar/polybar/wiki)
+* [picom wiki](https://wiki.archlinux.org/index.php/Picom)
