@@ -60,7 +60,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xset dpms 1200
 
 # set background
-exec --no-startup-id feh --bg-fill ~/Pictures/Baby/IMG_8729.jpg
+exec --no-startup-id feh --bg-fill [enter your picture location]
 
 
 #############

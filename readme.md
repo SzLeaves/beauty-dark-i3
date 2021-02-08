@@ -9,6 +9,7 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 * rofi
 * xfce4-power-manager (used to backlight adjust)
 * terminator
+* feh (used to set background image)
 * pulseaudio
 * nmcli
 
