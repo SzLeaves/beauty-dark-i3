@@ -1,7 +1,7 @@
 # beauty-dark-i3
 A **dark** theme about i3wm, include dunst, picom, polybar and rofi.  
 
-## dependency
+## Dependency
 * i3wm (or i3-gaps)
 * nm-applet ([NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager))
 * xfce4-power-manager (used to adjust backlight)
