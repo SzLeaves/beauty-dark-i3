@@ -71,7 +71,7 @@ exec --no-startup-id feh --bg-fill [enter your picture location]
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec --no-startup-id terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
