@@ -17,7 +17,7 @@ configuration {
 
 * {
   background-color: rgba(0, 0, 0, 0);
-  font: "Microsoft YaHei 13";
+  font: "Microsoft YaHei 12.5";
 }
 
 window {
@@ -26,7 +26,7 @@ window {
   border-radius: 30px;
   padding: 25px;
   width: 50%;
-  height: 50%;
+  height: 55%;
   transparency: "real";
 }
 
@@ -57,13 +57,7 @@ element selected {
 }
 
 element-icon {
-  size: 60;
-  horizontal-align: 0.5;
-  vertical-align: 0.5;
-}
-
-element-icon {
-  size: 40;
+  size: 55;
   horizontal-align: 0.5;
   vertical-align: 0.5;
 }
