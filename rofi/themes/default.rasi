@@ -18,6 +18,7 @@ configuration {
 * {
   background-color: rgba(0, 0, 0, 0);
   font: "Microsoft YaHei 12.5";
+  text-color: @txt;
 }
 
 window {
