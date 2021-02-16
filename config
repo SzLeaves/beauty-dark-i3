@@ -9,7 +9,7 @@
 set $mod Mod4
 
 # Font for window titles
-font pango: Microsoft YaHei 12.5
+font pango: Noto Sans CJK SC 12.5
 
 # Title format
 title_align center
@@ -32,7 +32,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym Mod4+Shift+e exec "i3-nagbar -t warning -f 'pango: Microsoft YaHei 12' -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym Mod4+Shift+e exec "i3-nagbar -t warning -f 'pango: Noto Sans CJK SC 12' -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Theme colors (use gruvbox theme)
 # $i3-theme-window
@@ -47,20 +47,18 @@ client.urgent           #7c6f64 #fabd2f #3c3836 #fabd2f
 ###############
 
 exec --no-startup-id nm-applet # NetworkManager
-exec --no-startup-id xfce4-power-manager # Could be used to backlight adjust
 exec --no-startup-id picom --config ~/.config/i3/picom/picom.conf -b
 exec --no-startup-id dunst -config ~/.config/i3/dunst/dunstrc
 exec --no-startup-id polybar --config=~/.config/i3/polybar/config mainbar
 exec --no-startup-id fcitx5
 
 # power manager
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id xset dpms 1200
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xset dpms 1200
+exec --no-startup-id xfce4-power-manager # Could be used to backlight adjust
 
 # set background
-exec --no-startup-id feh --bg-fill [enter your picture location]
+# exec --no-startup-id feh --bg-fill [enter your picture location]
 
 
 #############
