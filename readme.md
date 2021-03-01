@@ -11,7 +11,8 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 * rofi
 * terminator
 * feh (used to set background image)
-* pulseaudio
+* pulseaudio (pavucontrol)
+* blueman (blueman-manager)
 
 ## Location
 `$HOME/.config/i3`  
