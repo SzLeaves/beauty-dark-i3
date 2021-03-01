@@ -11,11 +11,20 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 * rofi
 * terminator
 * feh (used to set background image)
+* redshift (used to set color temperature)
 * pulseaudio (pavucontrol)
 * blueman (blueman-manager)
 
 ## Location
 `$HOME/.config/i3`  
+
+## Key Setting
+It is basically the same as i3wm normal configure.  
+There are some new functional keys in this i3wmconfig:  
+* `mod + T`         color temperature adjust  
+* `mod + Shift + T` cancel color temperature adjust  
+* `mod + F1`        open the pulseaudio to control volume
+* `mod + F4`        open the bluetooth manager
 
 ## Thanks :)
 * [aeghn/prettyi3](https://github.com/aeghn/prettyi3)
