@@ -65,20 +65,41 @@ exec --no-startup-id xfce4-power-manager # Could be used to backlight adjust
 # Key binding
 #############
 
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
+#### application binding
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id terminator
-
-# kill focused window
-bindsym $mod+Shift+q kill
 
 # start fast menu (a program launcher)
 # use rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -config ~/.config/i3/rofi/themes/default.rasi
 bindsym $mod+Tab exec --no-startup-id rofi  -show window -config ~/.config/i3/rofi/themes/Switch.rasi
 bindsym $mod+p exec --no-startup-id ~/.config/i3/rofi/scripts/Powermenu.sh
+
+# adjust volume (PulseAudio)
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# redshift adjust
+bindsym $mod+t exec --no-startup-id redshift -O 4300
+bindsym $mod+Shift+t exec --no-startup-id redshift -x
+
+# pulseaudio controller
+bindsym $mod+F1 exec --no-startup-id pavucontrol
+
+# bluetooth controller
+bindsym $mod+F4 exec --no-startup-id blueman-manager
+
+#### i3wm binding
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
 
 # change focus
 bindsym $mod+j focus left
@@ -127,14 +148,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-
 ####################
 # Workspace behavier
 ####################
@@ -174,6 +187,19 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# windows allocation
+assign [class="netease-cloud-music"] $ws10
+
+for_window [class="Org.gnome.Nautilus"]  floating enable resize set 1280 768, move position center
+
+for_window [class="Gnome-calculator"]    floating enable
+for_window [class="Gnome-calendar"]      floating enable
+for_window [class="Blueman-manager"]     floating enable
+for_window [class="Pavucontrol"]         floating enable
+for_window [class="baidunetdisk"]        floating enable
+for_window [class="feh"]                 floating enable
+for_window [class="qt5ct"]               floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
