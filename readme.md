@@ -3,6 +3,7 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 
 ## Dependency
 * i3wm (or i3-gaps)
+* qt5ct, qt5-styleplugins (unified appearance between gtk and qt)
 * nm-applet ([NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager))
 * xfce4-power-manager (used to adjust backlight)
 * dunst (used to system notice)
@@ -17,6 +18,15 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 
 ## Location
 `$HOME/.config/i3`  
+
+## Unified Appearance (Qt and GTK)
+**set environment variable in `/etc/profile`**  
+`export QT_QPA_PLATFORMTHEME=qt5ct`  
+and run this command `qt5ct` in terminal  
+
+If you want the qt4/qt5 appearance the same as gtk theme, set style as `gtk2`.   
+You can also change the fonts setting.
+> more detail: [Uniform look for Qt and GTK applications](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications)
 
 ## Key Setting
 It is basically the same as i3wm normal configure.  
