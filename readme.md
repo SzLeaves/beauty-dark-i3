@@ -1,6 +1,8 @@
 # beauty-dark-i3
 A **dark** theme about i3wm, include dunst, picom, polybar and rofi.  
 
+![review_image](https://raw.githubusercontent.com/SzLeaves/beauty-dark-i3/main/review_images/00.jpg)
+
 ## Dependency
 * i3wm (or i3-gaps)
 * qt5ct, qt5-styleplugins (unified appearance between gtk and qt)
