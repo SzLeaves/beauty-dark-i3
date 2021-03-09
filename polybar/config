@@ -6,6 +6,13 @@ mpadding = 1
 margin = 3 
 
 [bar/mainbar]
+
+;; you can use this option to select the output monitor,
+;; to run this command to check connected display device: 
+;; xrandr -q | grep " connected" | cut -d ' ' -f1
+;; example:
+; monitor = HDMI-A-0 
+
 background = ${colors.xbg}
 foreground = ${colors.xfg}
 
