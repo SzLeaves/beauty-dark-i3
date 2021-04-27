@@ -32,54 +32,58 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym Mod4+Shift+e exec "i3-nagbar -t warning -f 'pango: Noto Sans CJK SC 12' -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym Mod4+Shift+e exec "i3-nagbar -t warning -f 'pango: Microsoft YaHei 12' -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Theme colors (use gruvbox theme)
-# $i3-theme-window
+# Theme colors
+# gruvbox theme
+# class                   border  backgr. text    indicator
+# client.focused          #3c3836 #32302f #fabd2f #fabd2f
+# client.focused_inactive #3c3836 #504945 #d5c4a1 #504945
+# client.unfocused        #3c3836 #504945 #d5c4a1 #504945
+# client.urgent           #7c6f64 #fabd2f #3c3836 #fabd2f
+
+# ion3 theme
 # class                 border  backgr. text    indicator
-client.focused          #3c3836 #32302f #fabd2f #fabd2f
-client.focused_inactive #3c3836 #504945 #d5c4a1 #504945
-client.unfocused        #3c3836 #504945 #d5c4a1 #504945
-client.urgent           #7c6f64 #fabd2f #3c3836 #fabd2f
+client.focused          #808090 #606070 #C0C0C5 #2e9ef4
+client.focused_inactive #5F5F5F #303030 #808080 #292d2e
+client.unfocused        #5F5F6F #303040 #707075 #484e50
+client.urgent           #2f343a #900000 #ffffff #900000
 
 ###############
 # Basic service
 ###############
 
-exec --no-startup-id nm-applet # NetworkManager
 exec --no-startup-id picom --config ~/.config/i3/picom/picom.conf -b
 exec --no-startup-id dunst -config ~/.config/i3/dunst/dunstrc
 exec --no-startup-id polybar --config=~/.config/i3/polybar/config mainbar
+exec --no-startup-id polybar --config=~/.config/i3/polybar/config externalbar
+exec --no-startup-id nm-applet # NetworkManager
 exec --no-startup-id fcitx5
 
 # power manager
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# exec --no-startup-id xset dpms 1200
 exec --no-startup-id xfce4-power-manager # Could be used to backlight adjust
 
 # set background
-# exec --no-startup-id feh --bg-fill [enter your picture location]
-
+# exec --no-startup-id feh --bg-scale [enter your backgrounds path]
 
 #############
 # Key binding
 #############
 
-#### application binding
-
+## application binding
 # start a terminal
-bindsym $mod+Return exec --no-startup-id terminator
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
 
-# start fast menu (a program launcher)
-# use rofi
+# start fast menu (a program launcher), use rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -config ~/.config/i3/rofi/themes/default.rasi
 bindsym $mod+Tab exec --no-startup-id rofi  -show window -config ~/.config/i3/rofi/themes/Switch.rasi
 bindsym $mod+p exec --no-startup-id ~/.config/i3/rofi/scripts/Powermenu.sh
 
-# adjust volume (PulseAudio)
+# Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -93,8 +97,13 @@ bindsym $mod+F1 exec --no-startup-id pavucontrol
 # bluetooth controller
 bindsym $mod+F4 exec --no-startup-id blueman-manager
 
-#### i3wm binding
+# clocks
+bindsym $mod+c exec --no-startup-id gnome-clocks
 
+# screenshot
+bindsym $mod+shift+s exec --no-startup-id gnome-screenshot -a -i
+
+## i3wm binding
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
@@ -119,8 +128,7 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
+# alternatively, you can use the cursor keys: bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
@@ -191,28 +199,46 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # windows allocation
 assign [class="netease-cloud-music"] $ws10
 
-for_window [class="Org.gnome.Nautilus"]  floating enable resize set 1280 768, move position center
+for_window [class="netease-cloud-music"]     floating enable resize set 1390 900, move position center
+for_window [class="Org.gnome.Nautilus"]      floating enable resize set 1280 768, move position center
+for_window [class="Org.gnome.clocks"]        floating enable resize set 1080 668, move position center
+for_window [class="Gnome-todo"]              floating enable resize set 1280 768, move position center
 
-for_window [class="Gnome-calculator"]    floating enable
-for_window [class="Gnome-calendar"]      floating enable
-for_window [class="Blueman-manager"]     floating enable
-for_window [class="Pavucontrol"]         floating enable
-for_window [class="baidunetdisk"]        floating enable
-for_window [class="feh"]                 floating enable
-for_window [class="qt5ct"]               floating enable
+for_window [class="Org.gnome.Characters"]    floating enable
+for_window [class="Gnome-calculator"]        floating enable
+for_window [class="Gnome-calendar"]          floating enable
+for_window [class="Gnome-screenshot"]        floating enable
+for_window [class="Blueman-manager"]         floating enable
+for_window [class="Pavucontrol"]             floating enable
+for_window [class="baidunetdisk"]            floating enable
+for_window [class="feh"]                     floating enable
+for_window [class="qt5ct"]                   floating enable
+for_window [class="Mousepad"]                floating enable
+
+
+for_window [title="win0"]                    floating enable
+for_window [title="Screenshot"]              floating enable
+for_window [title="Evernote Web Clipper"]    floating enable
+
+# jetbrains application start project window
+for_window [title="Welcome to PyCharm"]          floating enable resize set 800 600, move position center
+for_window [title="Welcome to IntelliJ IDEA"]    floating enable resize set 800 600, move position center
+for_window [title="Welcome to DataGrip"]         floating enable resize set 800 600, move position center
+for_window [title="Welcome to WebStorm"]         floating enable resize set 800 600, move position center
+for_window [title="Welcome to CLion"]            floating enable resize set 800 600, move position center
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
