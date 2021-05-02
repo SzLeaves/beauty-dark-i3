@@ -17,6 +17,7 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 * redshift (used to set color temperature)
 * pulseaudio (pavucontrol)
 * blueman (blueman-manager)
+* gnome-keyring (password keyring manager, some applications to use it)
 
 ## Other Applications
 * Gnome clocks (clock and timer)
