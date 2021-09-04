@@ -14,7 +14,7 @@ configuration {
     bg:               #282a36;
     blackselect:      #44475a;
     cyan:             #8be9fd;
-    font: "Noto Sans CJK SC 12.5";
+    font: "Noto Sans CJK SC 12";
     background-color: @bg;
 }
 
@@ -61,7 +61,7 @@ element {
 }
 
 element-icon {
-   size: 50;
+   size: 53;
    horizontal-align: 0.5;
    vertical-align: 0.5; 
 }
