@@ -1,0 +1,131 @@
+/*-*- mode: css; -*-*/
+
+configuration {
+    show-icons: true; 
+}
+
+/* global settings and color variables */
+* {
+    maincolor:        #50fa7b;
+    highlight:        bold #50fa7b;
+    urgentcolor:      #ff79c6;
+
+    fg:               #f8f8f2;
+    bg:               #282a36;
+    blackselect:      #44475a;
+    font: "Noto Sans CJK SC 13.5";
+    background-color: @bg;
+}
+
+window {
+    anchor: center;
+    background-color: @bg;
+    border: 0;
+    border-radius: 30px;
+    padding: 20px;
+    width: 38%;
+    height: 53%;
+}
+
+mainbox {
+    border-radius: 30px;
+    background-color: @bg;
+    children: [inputbar, message, listview];
+}
+
+message {
+    padding: 6px 10px;
+    background-color:@bg;
+}
+
+textbox {
+    text-color:@fg;
+    background-color:@bg;
+}
+
+listview {
+    fixed-height: false;
+    dynamic: true;
+    scrollbar: false;
+    spacing: 0px;
+    padding: 30px 15px 0px 15px;
+    background: @bg;
+}
+
+element {
+  border-radius: 20px;
+}
+
+element-icon {
+   size: 30;
+   horizontal-align: 0.5;
+   vertical-align: 0.5; 
+}
+
+element-text {
+    padding: 5px; 
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+element normal.normal {
+    padding: 0px 15px;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element normal.urgent {
+    background-color: @bg;
+    text-color: @urgentcolor;
+}
+
+element normal.active {
+    background-color: @bg;
+    text-color: @maincolor;
+}
+
+element selected.normal {
+    background-color: @blackselect;
+    text-color:       @fg;
+}
+
+element selected.urgent {
+    background-color: @urgentcolor;
+    text-color:       @bg;
+}
+
+element selected.active {
+    background-color: @blackselect;
+    text-color:       @maincolor;
+}
+
+element alternate.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+element alternate.urgent {
+    background-color: @bg;
+    text-color:       @urgentcolor;
+}
+
+element alternate.active {
+    background-color: @bg;
+    text-color:       @maincolor;
+}
+
+inputbar { 
+    padding: 20px 10px 0px 10px;
+    background-color: @bg;
+    spacing: 0px;
+}
+
+entry {
+    font: "Noto Sans CJK SC Bold 14";
+    background-color:@bg;
+    text-color:@fg;
+}
+
+prompt {
+  enabled: false;
+}

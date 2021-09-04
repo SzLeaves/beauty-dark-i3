@@ -1,0 +1,113 @@
+/*-*- mode: css; -*-*/
+
+/* global settings and color variables */
+* {
+    maincolor:        #50fa7b;
+    highlight:        bold #50fa7b;
+    urgentcolor:      #ff79c6;
+
+    fg:               #f8f8f2;
+    bg:               #282a36;
+    blackselect:      #44475a;
+    font: "Noto Sans CJK SC 41";
+    background-color: @bg;
+}
+
+window {
+    anchor: center;
+    width: 10%;
+    height: 13%;
+    background-color: @bg;
+    border: 0;
+    border-radius: 30px;
+}
+
+mainbox {
+    border-radius: 30px;
+    background-color: @bg;
+    children: [inputbar, message, listview];
+}
+
+textbox {
+    text-color:@fg;
+    background-color:@bg;
+}
+
+listview {
+    columns: 3;
+    fixed-height: false;
+    dynamic: true;
+    scrollbar: false;
+    spacing: 0px;
+    padding: 18px 10px;
+    background: @bg;
+}
+
+element {
+  border-radius: 20px;
+}
+
+element-text {
+    padding: 5px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5; 
+    text-color: inherit;
+}
+
+element normal.normal {
+    padding: 0px 15px;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element normal.urgent {
+    background-color: @bg;
+    text-color: @urgentcolor;
+}
+
+element normal.active {
+    background-color: @bg;
+    text-color: @maincolor;
+}
+
+element selected.normal {
+    background-color: @blackselect;
+    text-color:       @fg;
+}
+
+element selected.urgent {
+    background-color: @urgentcolor;
+    text-color:       @bg;
+}
+
+element selected.active {
+    background-color: @blackselect;
+    text-color:       @maincolor;
+}
+
+element alternate.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+element alternate.urgent {
+    background-color: @bg;
+    text-color:       @urgentcolor;
+}
+
+element alternate.active {
+    background-color: @bg;
+    text-color:       @maincolor;
+}
+
+inputbar { 
+    enabled: false;
+}
+
+entry {
+    enabled: false;
+}
+
+prompt {
+    enabled: false;
+}
