@@ -47,6 +47,7 @@ There are some new functional keys in this i3wmconfig:
 * `mod + Shift + S` open screenshot application
 
 ## Thanks :)
+* [da-edra/dotfiles](https://github.com/da-edra/dotfiles)
 * [aeghn/prettyi3](https://github.com/aeghn/prettyi3)
 * [jorhelp/Config_for_Linux](https://github.com/jorhelp/Config_for_Linux)
 * [i3 wiki](https://wiki.archlinux.org/index.php/I3)
