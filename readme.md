@@ -1,7 +1,7 @@
 # beauty-dark-i3
 A **dark** theme about i3wm, include dunst, picom, polybar and rofi.  
 
-![review_image](https://raw.githubusercontent.com/SzLeaves/beauty-dark-i3/main/review_images/00.jpg)
+![review_image](https://raw.githubusercontent.com/SzLeaves/beauty-dark-i3/main/review_images/00.png)
 
 ## Dependency
 * i3wm (or i3-gaps)
