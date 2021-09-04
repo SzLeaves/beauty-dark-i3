@@ -76,9 +76,9 @@ exec --no-startup-id xfce4-power-manager # Could be used to backlight adjust
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
 
 # start fast menu (a program launcher), use rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun -config ~/.config/i3/rofi/themes/default.rasi
-bindsym $mod+Tab exec --no-startup-id rofi  -show window -config ~/.config/i3/rofi/themes/Switch.rasi
-bindsym $mod+p exec --no-startup-id ~/.config/i3/rofi/scripts/Powermenu.sh
+bindsym $mod+d exec --no-startup-id rofi -modi "drun" -show drun -config ~/.config/i3/rofi/main_menu.rasi
+bindsym $mod+Tab exec --no-startup-id rofi -modi "window" -show window -config ~/.config/i3/rofi/windows_tasks.rasi
+bindsym $mod+p exec --no-startup-id sh ~/.config/i3/rofi/power_menu.sh
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -198,8 +198,11 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # windows allocation
 assign [class="netease-cloud-music"] $ws10
+assign [class="qqmusic"] $ws10
 
+for_window [class="icalingua"]               floating enable resize set 1024 700, move position center
 for_window [class="netease-cloud-music"]     floating enable resize set 1390 900, move position center
+for_window [class="qqmusic"]                 floating enable resize set 1390 900, move position center
 for_window [class="Org.gnome.Nautilus"]      floating enable resize set 1280 768, move position center
 for_window [class="Org.gnome.clocks"]        floating enable resize set 1080 668, move position center
 for_window [class="Gnome-todo"]              floating enable resize set 1280 768, move position center
