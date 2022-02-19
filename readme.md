@@ -39,12 +39,14 @@ You can also change the fonts setting.
 ## Key Setting
 It is basically the same as i3wm normal configure.  
 There are some new functional keys in this i3wmconfig:  
-* `mod + c`         open clock application
-* `mod + T`         color temperature adjust  
-* `mod + F1`        open the pulseaudio to control volume
-* `mod + F4`        open the bluetooth manager
-* `mod + Shift + T` cancel color temperature adjust  
-* `mod + Shift + S` open screenshot application
+* `mod + c`          open clock application
+* `mod + T`          color temperature adjust  
+* `mod + F1`         open the pulseaudio to control volume
+* `mod + F4`         open the bluetooth manager
+* `mod + Shift + T`  cancel color temperature adjust  
+* `mod + Shift + S`  open screenshot application
+* `mod + o`          run `dunstctl` to close notification windows
+* `mod + Shift + o`  run `dunstctl` to display history notification windows
 
 ## Thanks :)
 * [da-edra/dotfiles](https://github.com/da-edra/dotfiles)

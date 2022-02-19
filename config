@@ -54,11 +54,13 @@ client.urgent           #2f343a #900000 #ffffff #900000
 ###############
 
 exec --no-startup-id picom --config ~/.config/i3/picom/picom.conf -b
-exec --no-startup-id dunst -config ~/.config/i3/dunst/dunstrc
 exec --no-startup-id polybar --config=~/.config/i3/polybar/config mainbar
-exec --no-startup-id polybar --config=~/.config/i3/polybar/config externalbar
+exec --no-startup-id polybar --config=~/.config/i3/polybar/config externalbar   # on the second screen to display (if you have got it :)
 exec --no-startup-id nm-applet # NetworkManager
 exec --no-startup-id fcitx5
+
+# notification-daemon (dunst)
+exec --no-startup-id dunst -config ~/.config/i3/dunst/dunstrc
 
 # power manager
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -102,6 +104,10 @@ bindsym $mod+c exec --no-startup-id gnome-clocks
 
 # screenshot
 bindsym $mod+shift+s exec --no-startup-id gnome-screenshot -a -i
+
+# dunstctl
+bindsym $mod+o exec --no-startup-id dunstctl close
+bindsym $mod+Shift+o exec --no-startup-id dunstctl history-pop
 
 ## i3wm binding
 # Use Mouse+$mod to drag floating windows
