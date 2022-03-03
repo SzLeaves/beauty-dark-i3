@@ -62,23 +62,15 @@ label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 
 [settings]
-throttle-output = 5
-throttle-output-for = 10
-throttle-input-for = 30
+;throttle-output = 5
+;throttle-output-for = 10
+;throttle-input-for = 30
 screenchange-reload = true
 compositing-background = over
 compositing-foreground = over
 compositing-overline = over
 compositing-underline = over
 compositing-border = over
-
-; Define fallback values used by all module formats
-format-underline =
-format-overline =
-format-spacing =
-format-padding =
-format-margin =
-format-offset =
 
 [global/wm]
 margin-top =0
