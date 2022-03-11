@@ -53,7 +53,7 @@ client.urgent           #2f343a #900000 #ffffff #900000
 # Basic service
 ###############
 
-exec --no-startup-id picom --config ~/.config/i3/picom/picom.conf -b
+exec --no-startup-id picom --config ~/.config/i3/picom/picom.conf -b --experimental-backends
 exec --no-startup-id polybar --config=~/.config/i3/polybar/config mainbar
 exec --no-startup-id polybar --config=~/.config/i3/polybar/config externalbar   # on the second screen to display (if you have got it :)
 exec --no-startup-id nm-applet # NetworkManager
