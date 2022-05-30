@@ -7,6 +7,7 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 ## Dependency
 * i3wm (or i3-gaps)
 * qt5ct, qt5-styleplugins (unified appearance between gtk and qt)
+* lxappearance-gtk3 (themes manager)
 * nm-applet ([NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager))
 * xfce4-power-manager (used to adjust backlight)
 * dunst (used to system notice)
