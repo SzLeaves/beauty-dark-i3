@@ -23,7 +23,8 @@ default_floating_border none
 workspace_layout tabbed
 
 # i3 gaps
-gaps inner 13
+gaps inner 12
+gaps top   30
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -54,20 +55,24 @@ client.urgent           #2f343a #900000 #ffffff #900000
 ###############
 
 exec --no-startup-id picom --config ~/.config/i3/picom/picom.conf -b --experimental-backends
-exec --no-startup-id polybar --config=~/.config/i3/polybar/config mainbar
-exec --no-startup-id polybar --config=~/.config/i3/polybar/config externalbar   # on the second screen to display (if you have got it :)
+exec_always --no-startup-id ~/.config/i3/polybar/launch.sh
 exec --no-startup-id nm-applet # NetworkManager
 exec --no-startup-id fcitx5
 
 # notification-daemon (dunst)
 exec --no-startup-id dunst -config ~/.config/i3/dunst/dunstrc
+bindsym $mod+o exec --no-startup-id dunstctl close
+bindsym $mod+Shift+o exec --no-startup-id dunstctl history-pop
 
 # power manager
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xfce4-power-manager # Could be used to backlight adjust
 
+# proxy
+# exec --no-startup-id clash
+
 # set background
-# exec --no-startup-id feh --bg-scale [enter your backgrounds path]
+# exec --no-startup-id feh --bg-scale [use your pictures]
 
 #############
 # Key binding
@@ -104,10 +109,6 @@ bindsym $mod+c exec --no-startup-id gnome-clocks
 
 # screenshot
 bindsym $mod+shift+s exec --no-startup-id gnome-screenshot -a -i
-
-# dunstctl
-bindsym $mod+o exec --no-startup-id dunstctl close
-bindsym $mod+Shift+o exec --no-startup-id dunstctl history-pop
 
 ## i3wm binding
 # Use Mouse+$mod to drag floating windows
@@ -203,18 +204,27 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # windows allocation
-assign [class="netease-cloud-music"] $ws10
-assign [class="qqmusic"] $ws10
+assign [class="Vmware"]                 $ws9
+assign [class="qqmusic"]                $ws10
+assign [class="FeelUOwn"]               $ws10
+assign [class="netease-cloud-music"]    $ws10
 
-for_window [class="icalingua"]               floating enable resize set 1024 700, move position center
-for_window [class="netease-cloud-music"]     floating enable resize set 1390 900, move position center
-for_window [class="qqmusic"]                 floating enable resize set 1390 900, move position center
-for_window [class="Org.gnome.Nautilus"]      floating enable resize set 1280 768, move position center
-for_window [class="Org.gnome.clocks"]        floating enable resize set 1080 668, move position center
-for_window [class="Gnome-todo"]              floating enable resize set 1280 768, move position center
+# for_window [class="netease-cloud-music"]            floating enable resize set 1590 950, move position center
+for_window [class="qqmusic"]                          floating enable resize set 1390 900, move position center
+for_window [class="FeelUOwn"]                         floating enable resize set 1390 900, move position center
+for_window [class="icalingua"]                        floating enable resize set 1024 700, move position center
+for_window [class="Org.gnome.Nautilus"]               floating enable resize set 1280 768, move position center
+for_window [class="Org.gnome.clocks"]                 floating enable resize set 1080 668, move position center
+for_window [class="Gnome-todo"]                       floating enable resize set 1280 768, move position center
+for_window [class="File-roller"]                      floating enable resize set 600 468,  move position center
+for_window [class="Mousepad"]                         floating enable resize set 900 600, move position center
+for_window [class="Ristretto"]                        floating enable resize set 1280 768, move position center
+for_window [class="org.jackhuang.hmcl.Launcher"]      floating enable resize set 1024 600, move position center
 
+for_window [class="chiner"]                  floating disable
 for_window [class="Org.gnome.Characters"]    floating enable
-for_window [class="Gnome-calculator"]        floating enable
+for_window [class="Zathura"]                 floating enable
+for_window [class="gnome-calculator"]        floating enable
 for_window [class="Gnome-calendar"]          floating enable
 for_window [class="Gnome-screenshot"]        floating enable
 for_window [class="Blueman-manager"]         floating enable
@@ -222,12 +232,13 @@ for_window [class="Pavucontrol"]             floating enable
 for_window [class="baidunetdisk"]            floating enable
 for_window [class="feh"]                     floating enable
 for_window [class="qt5ct"]                   floating enable
-for_window [class="Mousepad"]                floating enable
+for_window [class="wemeetapp"]               floating enable
 
 
 for_window [title="win0"]                    floating enable
 for_window [title="Screenshot"]              floating enable
 for_window [title="Evernote Web Clipper"]    floating enable
+for_window [title="Fiddler Splash Screen"]   floating enable
 
 # jetbrains application start project window
 for_window [title="Welcome to PyCharm"]          floating enable resize set 800 600, move position center
@@ -238,12 +249,7 @@ for_window [title="Welcome to CLion"]            floating enable resize set 800 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
-
-        # same bindings, but for the arrow keys
+        # bindings for the arrow keys
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
