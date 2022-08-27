@@ -72,7 +72,7 @@ exec --no-startup-id xfce4-power-manager # Could be used to backlight adjust
 # exec --no-startup-id clash
 
 # set background
-# exec --no-startup-id feh --bg-scale [use your pictures]
+# exec --no-startup-id feh --bg-scale [enter your backgrounds path]
 
 #############
 # Key binding
