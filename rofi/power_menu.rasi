@@ -7,8 +7,8 @@
     urgentcolor:      #ff79c6;
 
     fg:               #f8f8f2;
-    bg:               #282a36;
-    blackselect:      #44475a;
+    bg:               rgba(0,0,0,0);
+    blackselect:      rgba(74,74,74,0.9);
     font: "Noto Sans CJK SC 41";
     background-color: @bg;
 }
@@ -17,14 +17,16 @@ window {
     anchor: center;
     width: 10%;
     height: 13%;
-    background-color: @bg;
     border: 0;
-    border-radius: 30px;
+    border-radius: 0px;
+    margin: 0;
+    padding: 0px;
+    background-color: @bg;
 }
 
 mainbox {
     border-radius: 30px;
-    background-color: @bg;
+    background-color: rgba(28,28,28,0.9);
     children: [inputbar, message, listview];
 }
 
