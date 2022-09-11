@@ -57,3 +57,4 @@ There are some new functional keys in this i3wmconfig:
 * [i3 wiki](https://wiki.archlinux.org/index.php/I3)
 * [polybar wiki](https://github.com/polybar/polybar/wiki)
 * [picom wiki](https://wiki.archlinux.org/index.php/Picom)
+* [rofi transparency](https://blog.sarine.nl/2017/04/10/rofi-140-sneak-preview7.html)
