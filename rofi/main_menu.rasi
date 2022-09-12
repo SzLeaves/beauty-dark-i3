@@ -41,8 +41,11 @@ message {
 }
 
 textbox {
+    border-radius: 30px;
+    padding: 20px;
+    background-color: rgba(28,28,28,0.8);
     text-color:@fg;
-    background-color:@bg;
+    font: "Noto Sans CJK SC 13.5";
 }
 
 listview {
