@@ -11,7 +11,7 @@ A **dark** theme about i3wm, include dunst, picom, polybar and rofi.
 * nm-applet ([NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager))
 * xfce4-power-manager (used to adjust backlight)
 * dunst (used to system notice)
-* picom (or compton)
+* picom (use [jonaburg fork ](https://github.com/jonaburg/picom) **to enable blur-style and radius-style** which default disable)
 * polybar
 * rofi
 * xfce4-terminal
