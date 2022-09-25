@@ -16,8 +16,10 @@ title_align center
 
 # Hide borders
 hide_edge_borders none
-default_border none
-default_floating_border none
+# Hide Titlebars
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # default windows layout
 workspace_layout tabbed
