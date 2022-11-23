@@ -50,6 +50,30 @@ There are some new functional keys in this i3wmconfig:
 * `mod + o`          run `dunstctl` to close notification windows
 * `mod + Shift + o`  run `dunstctl` to display history notification windows
 
+## Polybar display in multiple screens 
+Please run `xrandr -q | grep " connected" | cut -d ' ' -f1` command to confirm your display device ports.  
+For example, If you had two monitors and they connected `eDP` ports and `HDMI-A-0` ports,   
+you can modify `polybar/config.ini` like this:
+```bash
+[monitor]
+;; specify your connected port to here (as a variable) and make sure they had connected.
+main = eDP
+external = HDMI-A-0
+```
+and use them:
+```bash
+;; the first monitor
+[bar/main]
+monitor = ${monitor.main}
+
+...
+
+;; the second monitor
+[bar/external]
+monitor = ${monitor.external}
+```
+> In my config file, two screens' polybar style configure are the same.
+
 ## Thanks :)
 * [da-edra/dotfiles](https://github.com/da-edra/dotfiles)
 * [aeghn/prettyi3](https://github.com/aeghn/prettyi3)
